@@ -3,5 +3,5 @@
 ## Запуск
 
 Создать бота [Инструкция](https://core.telegram.org/bots#3-how-do-i-create-a-bot). В процессе нужно получить API токен. Далее вставить токен в переменную bot.
-Далее, запустить main.py где вашей душе угодно
+Установить -> requirments.txt ``` pip install requirments.txt``` и запустить main.py где вашей душе угодно
 
