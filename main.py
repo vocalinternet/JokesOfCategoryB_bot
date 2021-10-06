@@ -5,7 +5,7 @@ import telebot
 bot = telebot.TeleBot("ВСТАВЬТЕ ТОКЕН ВАШЕГО БОТА СЮДА")
 
 def parse_joke(): # Парс анекдотов c указанного url
-    num = random.randint(1, 1000)
+    num = random.randint(1, 1142)
     url = 'https://baneks.ru/' + str(num)
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'lxml')
@@ -29,6 +29,10 @@ def send_welcome(message):
 @bot.message_handler(commands=['help'])
 def send_help(message):
     bot.send_message(message.chat.id, 'Разработчик: @calvision\nАнекдоты взяты с сайта: https://baneks.ru/')
+
+@bot.message_handler(commands=['joke'])
+def send_joke(message):
+    bot.send_message(message.chat.id, parse_joke(), reply_markup=markup1)
 
 @bot.callback_query_handler(func=lambda call: True)
 def query_handler(call):
